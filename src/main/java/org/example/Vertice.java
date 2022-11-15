@@ -24,12 +24,23 @@ public class Vertice {
         caminho.add(this);
     }
 
+    public Vertice() {
+    }
+
+    public Vertice(final Integer id, final Double x, final Double y) {
+        this.id = id;
+        this.x = x;
+        this.y = y;
+    }
+
     @Override
     public String toString() {
         return "Vertice{" +
                 "id=" + id +
                 ", caminho=" + caminho.stream().map(x -> x.getId()).collect(Collectors.toList()) +
                 String.format(", custo= %.2f", custo) +
+                ", verticesAdjacentes=" + verticesAdjacentes.stream().map(x -> x.getId()).collect(Collectors.toList()) +
+                ", ordemPesos=" + ordemPesos +
                 '}';
     }
 }

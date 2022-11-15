@@ -1,7 +1,6 @@
 package org.example;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -9,7 +8,66 @@ public class Main {
     public static void main(String[] args) {
 
         var scanner = new Scanner(System.in);
+        List<Vertice> verticesIniciais = new ArrayList<>();
 
+        //inicalizar vertives com com x e y
+        System.out.print("Quantidade de MOTES: ");
+        int qtdMotes = scanner.nextInt();
+
+        scanner.nextLine();
+        for (int i = 1; i <= qtdMotes + 1; i++) {
+            String coordenada = scanner.nextLine();
+            String[] coordenadas = coordenada.split(", ");
+
+            verticesIniciais.add(i-1, new Vertice(i, Double.parseDouble(coordenadas[0]), Double.parseDouble(coordenadas[1])));
+        }
+
+//        for (Vertice vertice : verticesIniciais) {
+//            System.out.println(vertice.getId() + " | " + vertice.getX() + ", " + vertice.getY());
+//        }
+
+        //calculo da hipotenusa para distancia entre vertices adjacentes
+        for (int i = 0; i < verticesIniciais.size(); i++) {
+            Vertice verticeAtualSendoAnalisado = verticesIniciais.get(i);
+
+            for (int j = 0; j < verticesIniciais.size(); j++) {
+                Vertice proximoVertice = verticesIniciais.get(j);
+
+                if(verticeAtualSendoAnalisado.getId() == proximoVertice.getId()){
+                    continue;
+                }
+
+                //vertice fixo A e iteravel B
+                Double verticeXAnalisando = verticeAtualSendoAnalisado.getX();
+                Double verticeYAnalisando = verticeAtualSendoAnalisado.getY();
+                Double verticeXProximo = proximoVertice.getX();
+                Double verticeYProximo = proximoVertice.getY();
+
+                Double cat1 = 0.0, cat2 = 0.0, hip = 0.0;
+
+                //POSSIBILIDADE 1
+                if(verticeXAnalisando < verticeXProximo &&
+                        verticeYAnalisando < verticeYProximo) {
+                    cat1 = verticeYAnalisando - verticeYProximo;
+                    cat2 = verticeXAnalisando - verticeXProximo;
+
+                    hip = Math.sqrt(Math.pow(cat1, 2) + Math.pow(cat2, 2));
+                }
+
+                //POSSIBILIDADE 2 - ADICIONAR NO GEOGEBRA E VERIFICAR
+
+                //POSSIBILIDADE 3
+
+                //POSSIBILIDADE 4
+
+                verticeAtualSendoAnalisado.getVerticesAdjacentes().add(proximoVertice);
+                verticeAtualSendoAnalisado.getOrdemPesos().add(hip);
+            }
+        }
+
+        verticesIniciais.forEach(System.out::println);
+
+        //----------------------------------------------------------------
         var vertice1 = new Vertice();
         vertice1.setId(1);
         vertice1.setX(3d);
@@ -61,6 +119,8 @@ public class Main {
         vertice3.getOrdemPesos().add(2d);
         vertice3.getOrdemPesos().add(1d);
         vertice3.getOrdemPesos().add(8d);
+
+        //----------------------------------------------------------------
 
         var vertices = List.of(vertice1, vertice2, vertice3, verticeEstacao);
 
