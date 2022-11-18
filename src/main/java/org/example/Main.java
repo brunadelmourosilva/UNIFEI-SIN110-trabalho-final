@@ -89,7 +89,7 @@ public class Main {
             }
         }
 
-        List<String> letras = List.of("A", "B", "C", "D", "E");
+        List<String> letras = List.of("A", "B", "C", "D", "E", "F", "G");
         for(int i=0; i<vertices.size(); i++){
             System.out.println(letras.get(i) + " - " + vertices.get(i));
         }
@@ -167,4 +167,12 @@ Entradas de teste
 6.14, 3.98
 1, 4
 9, 8
+* --------
+8, 4
+7.44, 3.46
+7, 1
+6.56, 4.58
+8.26, 3
+6.68, 3.8
+5.9, 3.26
  */
