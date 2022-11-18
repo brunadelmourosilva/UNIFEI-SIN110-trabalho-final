@@ -81,8 +81,11 @@ public class Main {
                     hip = Math.sqrt(Math.pow(cat1, 2) + Math.pow(cat2, 2));
                 }
 
-                verticeAtualSendoAnalisado.getVerticesAdjacentes().add(proximoVertice);
-                verticeAtualSendoAnalisado.getOrdemPesos().add(hip);
+                //DELIMITADOR EM ESCALA 2 | 1-10
+                if(hip <= 2) {
+                    verticeAtualSendoAnalisado.getVerticesAdjacentes().add(proximoVertice);
+                    verticeAtualSendoAnalisado.getOrdemPesos().add(hip);
+                }
             }
         }
 
@@ -93,62 +96,7 @@ public class Main {
 
 
         //----------------------------------------------------------------
-//        var vertice1 = new Vertice();
-//        vertice1.setId(1);
-//        vertice1.setX(3d);
-//        vertice1.setY(4d);
-//
-//        var vertice2 = new Vertice();
-//        vertice2.setId(2);
-//        vertice2.setX(2d);
-//        vertice2.setY(3d);
-//
-//        var vertice3 = new Vertice();
-//        vertice3.setId(3);
-//        vertice3.setX(3d);
-//        vertice3.setY(1d);
-//
-//        var verticeEstacao = new Vertice();
-//        verticeEstacao.setId(4);
-//        verticeEstacao.setX(0d);
-//        verticeEstacao.setY(1d);
-//
-//        verticeEstacao.getVerticesAdjacentes().add(vertice1);
-//        verticeEstacao.getVerticesAdjacentes().add(vertice2);
-//        verticeEstacao.getVerticesAdjacentes().add(vertice3);
-//
-//        verticeEstacao.getOrdemPesos().add(4d);
-//        verticeEstacao.getOrdemPesos().add(13d);
-//        verticeEstacao.getOrdemPesos().add(2d);
-//
-//        vertice1.getVerticesAdjacentes().add(verticeEstacao);
-//        vertice1.getVerticesAdjacentes().add(vertice2);
-//        vertice1.getVerticesAdjacentes().add(vertice3);
-//
-//        vertice1.getOrdemPesos().add(4d);
-//        vertice1.getOrdemPesos().add(3d);
-//        vertice1.getOrdemPesos().add(1d);
-//
-//        vertice2.getVerticesAdjacentes().add(verticeEstacao);
-//        vertice2.getVerticesAdjacentes().add(vertice1);
-//        vertice2.getVerticesAdjacentes().add(vertice3);
-//
-//        vertice2.getOrdemPesos().add(13d);
-//        vertice2.getOrdemPesos().add(3d);
-//        vertice2.getOrdemPesos().add(8d);
-//
-//        vertice3.getVerticesAdjacentes().add(verticeEstacao);
-//        vertice3.getVerticesAdjacentes().add(vertice1);
-//        vertice3.getVerticesAdjacentes().add(vertice2);
-//
-//        vertice3.getOrdemPesos().add(2d);
-//        vertice3.getOrdemPesos().add(1d);
-//        vertice3.getOrdemPesos().add(8d);
-
-//        var vertices = List.of(vertice1, vertice2, vertice3, verticeEstacao);
-
         //----------------------------------------------------------------
-
 
         System.out.println("Coordenadas de onde pegou fogo: ");
         String coordenada = scanner.nextLine();
@@ -210,18 +158,6 @@ public class Main {
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 *
 Entradas de teste
