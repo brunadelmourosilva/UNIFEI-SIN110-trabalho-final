@@ -37,6 +37,8 @@ public class Vertice {
     public String toString() {
         return "Vertice{" +
                 "id=" + id +
+                ", x = " + x +
+                ", y = " + y +
                 ", caminho=" + caminho.stream().map(x -> x.getId()).collect(Collectors.toList()) +
                 String.format(", custo= %.2f", custo) +
                 ", verticesAdjacentes=" + verticesAdjacentes.stream().map(x -> x.getId()).collect(Collectors.toList()) +
