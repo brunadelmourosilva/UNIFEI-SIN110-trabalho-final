@@ -9,9 +9,10 @@ public class Main {
 
         var scanner = new Scanner(System.in);
         List<Vertice> vertices = new ArrayList<>();
+        Vertice baseCentral = null;
 
         //inicalizar vertives com com x e y
-        System.out.print("Quantidade de MOTES: ");
+        System.out.print("Quantidade de motes: ");
         int qtdMotes = scanner.nextInt();
 
         scanner.nextLine();
@@ -20,11 +21,10 @@ public class Main {
             String[] coordenadas = coordenada.split(", ");
 
             vertices.add(i-1, new Vertice(i, Double.parseDouble(coordenadas[0]), Double.parseDouble(coordenadas[1])));
+            
+            if(i == 1) baseCentral = vertices.get(0);
         }
 
-//        for (Vertice vertice : verticesIniciais) {
-//            System.out.println(vertice.getId() + " | " + vertice.getX() + ", " + vertice.getY());
-//        }
 
         //calculo da hipotenusa para distancia entre vertices adjacentes
         for (int i = 0; i < vertices.size(); i++) {
@@ -82,7 +82,7 @@ public class Main {
                 }
 
                 //DELIMITADOR EM ESCALA 2 | 1-10
-                if(hip <= 2) {
+                if(hip <= 100d) {
                     verticeAtualSendoAnalisado.getVerticesAdjacentes().add(proximoVertice);
                     verticeAtualSendoAnalisado.getOrdemPesos().add(hip);
                 }
@@ -90,15 +90,15 @@ public class Main {
         }
 
         List<String> letras = List.of("A", "B", "C", "D", "E", "F", "G");
-        for(int i=0; i<vertices.size(); i++){
-            System.out.println(letras.get(i) + " - " + vertices.get(i));
-        }
+//        for(int i=0; i<vertices.size(); i++){
+//            System.out.println(letras.get(i) + " - " + vertices.get(i));
+//        }
 
 
         //----------------------------------------------------------------
         //----------------------------------------------------------------
 
-        System.out.println("Coordenadas de onde pegou fogo: ");
+        System.out.print("Coordenadas de onde pegou fogo: ");
         String coordenada = scanner.nextLine();
         String[] coordenadas = coordenada.split(", ");
 
@@ -114,7 +114,7 @@ public class Main {
         var filaAnalise = new ArrayList<Vertice>();
         verticeOrigem.setConhecido(true);
         filaAnalise.add(verticeOrigem);
-        System.out.println("VÉRTICE DE ORIGEM: " + verticeOrigem);
+        //System.out.println("VÉRTICE DE ORIGEM: " + verticeOrigem);
 
 
         while(!filaAnalise.isEmpty()) {
@@ -153,8 +153,8 @@ public class Main {
             filaAnalise.remove(verticeSendoAnalisado);
         }
 
-        vertices.forEach(System.out::println);
-
+        //vertices.forEach(System.out::println);
+        baseCentral.printaCaminhoECusto(verticeOrigem);
 
     }
 }

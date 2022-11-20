@@ -45,4 +45,13 @@ public class Vertice {
                 ", ordemPesos=" + ordemPesos +
                 '}';
     }
+
+    public void printaCaminhoECusto(Vertice verticeOrigem){
+        System.out.printf("Coordenadas do incêndio: (X = %.2f, Y = %.2f)", verticeOrigem.getX(), verticeOrigem.getY());
+        System.out.printf("\nCoordenadas da base central: (X = %.2f, Y = %.2f)", x, y);
+        System.out.printf("\nCaminho mínimo de (X = %.2f, Y = %.2f) até (X = %.2f, Y = %.2f): ", verticeOrigem.getX(), verticeOrigem.getY(), x, y);
+        caminho.forEach(letraCaminho -> System.out.print(letraCaminho.getId() + " "));
+        System.out.printf("\nCusto: %.3f", custo);
+        System.out.println("\nTotal de energia gasto: " + null);
+    }
 }
