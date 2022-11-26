@@ -47,19 +47,19 @@ public class Vertice {
     }
 
     public void printaCaminhoECusto(Vertice verticeOrigem){
-        System.out.println("\n******************************************");
+        System.out.println("\n************************************************************************************");
         System.out.println("\t\tSilvanet Wildfire Sensor Info\n");
         System.out.println("Power source | Solar-powered, battery-free");
         System.out.println("Distance between Sensors (Radius) | 100m radius for 60min detection of 2x2m fire");
-        System.out.println("******************************************\n");
+        System.out.println("************************************************************************************\n");
 
-        System.out.println("\n******************************************");
+        System.out.println("\n************************************************************************************");
         System.out.printf("Coordenadas do incêndio: (X = %.2f, Y = %.2f)", verticeOrigem.getX(), verticeOrigem.getY());
         System.out.printf("\n\nCoordenadas da base central: (X = %.2f, Y = %.2f)", x, y);
         System.out.printf("\n\nCaminho mínimo de (X = %.2f, Y = %.2f) até (X = %.2f, Y = %.2f): ", verticeOrigem.getX(), verticeOrigem.getY(), x, y);
         caminho.forEach(letraCaminho -> System.out.print(letraCaminho.getId() + " "));
         System.out.printf("\n\nCusto: %.3f", custo);
         System.out.println("\n\nTotal de energia gasto: " + null);
-        System.out.println("******************************************");
+        System.out.println("************************************************************************************");
     }
 }

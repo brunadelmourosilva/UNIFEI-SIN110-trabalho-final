@@ -5,28 +5,42 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    final static Scanner SCANNER = new Scanner(System.in);
     public static void main(String[] args) {
 
-        var scanner = new Scanner(System.in);
         List<Vertice> vertices = new ArrayList<>();
         Vertice baseCentral = null;
 
-        //inicializar vértices com com x e y
+        /** realiza a criação dos vértices a partir das coordenadas **/
         System.out.print("Quantidade de motes: ");
-        int qtdMotes = scanner.nextInt();
+        int qtdMotes = SCANNER.nextInt();
 
-        scanner.nextLine();
+        SCANNER.nextLine();
         for (int i = 1; i <= qtdMotes + 1; i++) {
-            String coordenada = scanner.nextLine();
+            String coordenada = SCANNER.nextLine();
             String[] coordenadas = coordenada.split(", ");
 
             vertices.add(i-1, new Vertice(i, Double.parseDouble(coordenadas[0]), Double.parseDouble(coordenadas[1])));
-            
+
             if(i == 1) baseCentral = vertices.get(0);
         }
 
+        /** cálculo da hipotenusa para encontrar a distância entre vértices adjacentes **/
+        calculaHipotenusa(vertices);
 
-        //calculo da hipotenusa para distancia entre vertices adjacentes
+
+        System.out.print("\nDigite as coordenadas de onde pegou fogo: ");
+        String coordenada = SCANNER.nextLine();
+        String[] coordenadas = coordenada.split(", ");
+
+        /** encontra o caminho mínimo entre as coordenadas de onde a queimada começou até a base central **/
+        var verticeOrigem = encontraCaminhoMinimo(vertices, coordenadas);
+
+        /** apresenta no console os resultados obtidos **/
+        baseCentral.printaCaminhoECusto(verticeOrigem);
+    }
+
+    private static void calculaHipotenusa(List<Vertice> vertices) {
         for (int i = 0; i < vertices.size(); i++) {
             Vertice verticeAtualSendoAnalisado = vertices.get(i);
 
@@ -88,20 +102,9 @@ public class Main {
                 }
             }
         }
+    }
 
-        List<String> letras = List.of("A", "B", "C", "D", "E", "F", "G");
-//        for(int i=0; i<vertices.size(); i++){
-//            System.out.println(letras.get(i) + " - " + vertices.get(i));
-//        }
-
-
-        //----------------------------------------------------------------
-        //----------------------------------------------------------------
-
-        System.out.print("\nDigite as coordenadas de onde pegou fogo: ");
-        String coordenada = scanner.nextLine();
-        String[] coordenadas = coordenada.split(", ");
-
+    private static Vertice encontraCaminhoMinimo(List<Vertice> vertices, String[] coordenadas) {
         Vertice verticeOrigem = null;
         for (Vertice vertice : vertices) {
             if(vertice.getX() == Double.parseDouble(coordenadas[0]) &&
@@ -114,8 +117,6 @@ public class Main {
         var filaAnalise = new ArrayList<Vertice>();
         verticeOrigem.setConhecido(true);
         filaAnalise.add(verticeOrigem);
-        //System.out.println("VÉRTICE DE ORIGEM: " + verticeOrigem);
-
 
         while(!filaAnalise.isEmpty()) {
             Vertice verticeSendoAnalisado = filaAnalise.get(0);
@@ -153,9 +154,9 @@ public class Main {
             filaAnalise.remove(verticeSendoAnalisado);
         }
 
-        //vertices.forEach(System.out::println);
-        baseCentral.printaCaminhoECusto(verticeOrigem);
+        return verticeOrigem;
     }
+
 }
 /*
 *
