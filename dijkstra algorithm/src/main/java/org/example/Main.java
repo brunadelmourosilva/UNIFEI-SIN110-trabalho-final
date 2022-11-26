@@ -11,7 +11,7 @@ public class Main {
         List<Vertice> vertices = new ArrayList<>();
         Vertice baseCentral = null;
 
-        //inicalizar vertives com com x e y
+        //inicializar vértices com com x e y
         System.out.print("Quantidade de motes: ");
         int qtdMotes = scanner.nextInt();
 
