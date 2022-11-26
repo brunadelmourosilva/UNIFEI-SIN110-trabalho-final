@@ -98,7 +98,7 @@ public class Main {
         //----------------------------------------------------------------
         //----------------------------------------------------------------
 
-        System.out.print("Coordenadas de onde pegou fogo: ");
+        System.out.print("\nDigite as coordenadas de onde pegou fogo: ");
         String coordenada = scanner.nextLine();
         String[] coordenadas = coordenada.split(", ");
 
@@ -155,7 +155,6 @@ public class Main {
 
         //vertices.forEach(System.out::println);
         baseCentral.printaCaminhoECusto(verticeOrigem);
-
     }
 }
 /*
