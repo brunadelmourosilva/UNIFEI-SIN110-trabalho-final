@@ -1,0 +1,24 @@
+
+t
+java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ
+K
+java:S1117*"5Rename "x" which hides the field declared at line 19.(ïž†ª
+P
+java:S1117,"5Rename "x" which hides the field declared at line 19.(ÐŒ¬¬ùÿÿÿÿ
+S	java:S1062"9Replace this use of System.out or System.err by a logger.(¦ïÕðúÿÿÿÿ
+S	java:S1063"9Replace this use of System.out or System.err by a logger.(ù™Ö·ýÿÿÿÿ
+N	java:S1064"9Replace this use of System.out or System.err by a logger.(ÜÜ“°
+N	java:S1065"9Replace this use of System.out or System.err by a logger.(úŠŽÈ
+S	java:S1066"9Replace this use of System.out or System.err by a logger.(Ãé‚øþÿÿÿÿ
+S	java:S1068"9Replace this use of System.out or System.err by a logger.(¦ïÕðúÿÿÿÿ
+Z	java:S1069"9Replace this use of System.out or System.err by a logger.(ýçè¬ÿÿÿÿÿ8ô¬ÎªË0
+l
+java:S3457:"Q%n should be used in place of \n to produce the platform-specific line separator.(ô˜Û¾ýÿÿÿÿ
+Z	java:S106:"9Replace this use of System.out or System.err by a logger.(ô˜Û¾ýÿÿÿÿ8ËúÎªË0
+T	java:S106;"9Replace this use of System.out or System.err by a logger.(ã€«18µ‘ïªË0
+Z	java:S106<"9Replace this use of System.out or System.err by a logger.(Î§ò–ûÿÿÿÿ8µ‘ïªË0
+g
+java:S3457="Q%n should be used in place of \n to produce the platform-specific line separator.(…²œþ
+U	java:S106="9Replace this use of System.out or System.err by a logger.(…²œþ8ä‘ðªË0
+Z	java:S106>"9Replace this use of System.out or System.err by a logger.(³õÿÌúÿÿÿÿ8³ÚóªË0
+T	java:S106?"9Replace this use of System.out or System.err by a logger.(ÈÏŸt8à¼÷ªË0

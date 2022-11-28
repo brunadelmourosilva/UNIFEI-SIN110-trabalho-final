@@ -1,0 +1,25 @@
+
+A
+java:S5411‚"*Use the primitive boolean expression here.(Î†ÊŒ
+W
+java:S49732"<Strings and Boxed types should be compared using "equals()".(¦Õ¡Ëÿÿÿÿÿ
+_
+java:S2259("IA "NullPointerException" could be thrown; "baseCentral" is nullable here.(ÚÖº
+a
+java:S2259v"KA "NullPointerException" could be thrown; "verticeOrigem" is nullable here.(èÆÝý
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Ò±¾Éýÿÿÿÿ
+L	java:S106"9Replace this use of System.out or System.err by a logger.(‚‡
+S	java:S106 "9Replace this use of System.out or System.err by a logger.(¯¢åžùÿÿÿÿ
+m
+java:S3776+"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(•¦ªÎúÿÿÿÿ
+S
+java:S1854<"8Remove this useless assignment to local variable "cat2".(ÕäÊûÿÿÿÿÿ
+S
+java:S1854<"8Remove this useless assignment to local variable "cat1".(ÕäÊûÿÿÿÿÿ
+\
+java:S1659<"ADeclare "cat2" and all following declarations on a separate line.(ÕäÊûÿÿÿÿÿ
+h
+java:S3776k"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(Ò–î¾
+>
+java:S1125‚"'Remove the unnecessary boolean literal.(Î†ÊŒ
