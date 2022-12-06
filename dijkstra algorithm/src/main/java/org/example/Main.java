@@ -129,8 +129,8 @@ public class Main {
 
                 if (adj.getConhecido() == false) {
 
+                    adj.getCaminho().clear();
                     for(Vertice vertice: verticeSendoAnalisado.getCaminho()){
-                        adj.getCaminho().clear();
                         adj.getCaminho().add(vertice);
                     }
                     adj.getCaminho().add(adj);
