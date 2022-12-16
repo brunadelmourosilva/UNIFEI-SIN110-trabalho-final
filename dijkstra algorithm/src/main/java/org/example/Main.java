@@ -114,33 +114,50 @@ public class Main {
             }
         }
 
+        // Setando o vértice de origem como conhecido, e o adicionando para a fila de análise
         var filaAnalise = new ArrayList<Vertice>();
         verticeOrigem.setConhecido(true);
         filaAnalise.add(verticeOrigem);
 
         while(!filaAnalise.isEmpty()) {
+
+            // Vértice atual sendo analisado
             Vertice verticeSendoAnalisado = filaAnalise.get(0);
 
             int run = -1;
 
+
+            // Executando para cada vértice na lista de adjacentes do analisado
             for (Vertice adj : verticeSendoAnalisado.getVerticesAdjacentes()) {
 
                 run++;
 
+                // Se o vértice adjacente não for conhecido
                 if (adj.getConhecido() == false) {
 
                     adj.getCaminho().clear();
                     for(Vertice vertice: verticeSendoAnalisado.getCaminho()){
                         adj.getCaminho().add(vertice);
                     }
+
+                    // Adiciona o vértice de origem + o próprio v. adj a variável caminho do v. adj
                     adj.getCaminho().add(adj);
+
+                    // Atualiza a variável custo no vértice adjacente
                     adj.setCusto(verticeSendoAnalisado.getCusto() + verticeSendoAnalisado.getOrdemPesos().get(run));
+                    
+                    // Adiciona o novo vértice recém-conhecido para a fila de análise
                     filaAnalise.add(adj);
                     adj.setConhecido(true);
 
+                
+                // Se o vértice adjacente for conhecido
                 }else {
+
+                    // Comparamos o custo atual do vértice adjacente com o custo da nova rota recém-descoberta
                     double custoComparacao = verticeSendoAnalisado.getCusto() + verticeSendoAnalisado.getOrdemPesos().get(run);
 
+                    // Se o custo da nova rota for menor, atualiza o custo e o caminho do vértice adjacente
                     if(custoComparacao < adj.getCusto()){
                         adj.getCaminho().clear();
                         for(Vertice vertice: verticeSendoAnalisado.getCaminho()){
@@ -151,6 +168,8 @@ public class Main {
                     }
                 }
             }
+
+            // Após finalizar as análises para o vértice n, retira-o da fila de análise
             filaAnalise.remove(verticeSendoAnalisado);
         }
 
